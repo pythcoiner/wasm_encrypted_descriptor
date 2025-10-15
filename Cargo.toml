@@ -1,0 +1,16 @@
+[package]
+name = "wasm_encrypted_descriptor"
+version = "0.1.0"
+authors = ["pythcoiner"]
+edition = "2021"
+publish = false
+
+[dependencies]
+bitcoin-encrypted-backup = { version = "=0.0.2", default-features = false, features = ["miniscript_latest"] }
+iced.version = "=0.12.1"
+rfd = "=0.15.3"
+getrandom = { version = "=0.3.3", features = ["wasm_js"] }
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+iced.version = "=0.12.1"
+iced.features = ["webgl"]

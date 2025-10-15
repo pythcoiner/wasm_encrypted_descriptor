@@ -1,0 +1,13 @@
+[Unit]
+Description=Bitcoin encrypted descriptor WASM
+After=network.target
+
+[Service]
+User=pyth
+Environment=RUSTFLAGS='--cfg getrandom_backend="wasm_js"'
+ExecStart=trunk serve --port 8021
+WorkingDirectory=/opt/bed/
+Restart=always
+
+[Install]
+WantedBy=default.target
