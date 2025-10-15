@@ -1,5 +1,5 @@
 run:
-    RUSTFLAGS='--cfg getrandom_backend="wasm_js"' trunk serve --port 8021 --release
+    RUSTFLAGS='--cfg getrandom_backend="wasm_js"' trunk serve --address 0.0.0.0 --port 8021 --release
 
 build:
     RUSTFLAGS='--cfg getrandom_backend="wasm_js"' trunk build --release
