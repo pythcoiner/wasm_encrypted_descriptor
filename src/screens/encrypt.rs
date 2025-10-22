@@ -91,6 +91,7 @@ impl Encrypt {
                         Ok(str) => str,
                         Err(_) => return error,
                     };
+                    let descr_str = descr_str.trim().to_string();
                     let descr = match Descriptor::<DescriptorPublicKey>::from_str(&descr_str) {
                         Ok(d) => d,
                         Err(_) => return error,
